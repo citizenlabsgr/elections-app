@@ -8,8 +8,10 @@ export default class RegistrationHome extends React.Component {
 
         this.state = {
             renderRegistrationForm: false,
+            renderBallot:false,
         };
         this.RenderRegistrationForm = this.RenderRegistrationForm.bind(this);
+        this.renderVoterBallot = this.renderVoterBallot.bind(this);
     }
     RenderRegistrationForm() {
         this.setState({ renderRegistrationForm: true });
