@@ -26,18 +26,21 @@ export default class RegistrationHome extends React.Component {
     this.RenderVoterBallot = this.RenderVoterBallot.bind(this);
     this.SetUserInfo = this.SetUserInfo.bind(this);
   }
-
-  RenderRegistrationForm(event) {
-    debugger;
-    this.setState({ renderRegistrationForm: true, });
+  RenderRegistrationForm() {
+    this.setState({ renderRegistrationForm: true });
   }
   RenderVoterBallot() {
     this.setState({ renderBallot: true });
   }
-  SetUserInfo(userData){
-    //render ballot depending on if they clicked yes or no
+  SetUserInfo(userData) {
 
-    this.setState({registrationInfo:userData,})
+    if (userData["registered"]) {
+      alert("You are registered!");
+    }
+    else {
+      alert("You are not registered");
+    }
+    this.setState({ registrationInfo: userData })
   }
 
   render() {
@@ -64,7 +67,7 @@ export default class RegistrationHome extends React.Component {
             )}
             {this.state.renderRegistrationForm && (
               <InputForm className="col-6" setRegistrantInfo={this.SetUserInfo} />
-              
+
             )}
 
             {/*<div className="col-6">Find ballot form here</div>
