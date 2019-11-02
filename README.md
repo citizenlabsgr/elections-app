@@ -8,9 +8,10 @@ Elections-app is a React Single Page App (SPA)
 1. if not Registered Link to the Michigan Voter Registration Information 
 
 ## Decisions
-1. [React](https://reactjs.org/)
-1. [SCSS](https://sass-lang.com/)
-1. [BEM](http://getbem.com/)
+1. [React](https://reactjs.org/) to Manage Javascript and HTML Componets
+1. [SCSS](https://sass-lang.com/) to give CSS a boost
+1. [BEM](http://getbem.com/) to help organize the css
+1. [Riteway](https://github.com/ericelliott/riteway) for testing
 
 ### Prerequisites
 
@@ -36,6 +37,7 @@ $ npm run build-prod # This will build a minified version of the project
   
 ### Run Tests
 ```shell script
-$ npm run test # as of this writing we have no tests
+$ npm run test # Run the tests once
+$ npm run watch-test # Run the tests every time you make a change
 ```
   

@@ -1,7 +1,14 @@
 {
-    plugins: ['transform-object-rest-spread'],
-    presets: ['es2015', 'react'],
-    env: {
-      production: ['minify']
-    }
-  }
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": [
+          "last 2 versions",
+          "safari >= 7"
+        ]
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}
