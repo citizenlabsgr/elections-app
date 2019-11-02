@@ -1,0 +1,3 @@
+# Dependencies for Heroku review apps
+
+sappy==1.1
