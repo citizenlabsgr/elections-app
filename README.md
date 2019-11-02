@@ -23,6 +23,11 @@ Elections-app is a React Single Page App (SPA)
 $ npm install
 ```
  
+### For Development
+```shell script
+$ npm watch # This will do build every time you make a change
+```
+ 
 ### Build Project
 ```shell script
 $ npm run build # This will build a non-minified version of the project

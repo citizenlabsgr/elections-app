@@ -1,11 +1,21 @@
 {
-  "name": "voterRegistration",
+  "name": "voter-registration",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx,html,scss",
+      "runOnChangeOnly": false
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.dev.js",
+    "watch": "npm-watch build",
     "build-prod": "webpack -p --config webpack.prod.js"
   },
   "keywords": [],
@@ -26,6 +36,7 @@
     "eslint-plugin-react": "^7.16.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
+    "npm-watch": "^0.6.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
