@@ -13,15 +13,15 @@ export default class RegistrationHome extends React.Component {
     super(props);
 
     this.state = {
-      showButtons:true,
+      showButtons: true,
       renderRegistrationForm: false,
-      renderBallot:false,
-      precintID:'',
+      renderBallot: false,
+      precintID: '',
     };
-    this.buttonOptions=['Yes, show me my ballot','No, find my registration status' ];
+    this.buttonOptions = ['Yes, show me my ballot', 'No, find my registration status'];
     this.ballotItems = [
-      {id: 'some-uuid-1', name: 'Ballot Item One'},
-      {id: 'some-uuid-2', name: 'Ballot Item Two'}
+      { id: 'some-uuid-1', name: 'Ballot Item One' },
+      { id: 'some-uuid-2', name: 'Ballot Item Two' }
     ];
     this.RenderRegistrationForm = this.RenderRegistrationForm.bind(this);
     this.renderVoterBallot = this.renderVoterBallot.bind(this);
@@ -30,8 +30,8 @@ export default class RegistrationHome extends React.Component {
   RenderRegistrationForm() {
     this.setState({ renderRegistrationForm: true });
   }
-  renderVoterBallot(){
-    this.setState({renderBallot:true});
+  renderVoterBallot() {
+    this.setState({ renderBallot: true });
   }
 
   render() {
@@ -40,7 +40,7 @@ export default class RegistrationHome extends React.Component {
         <div className="who-are-you">
           <div className="who-are-you__into-text row">
             <div className="who-are-you__image col-6 flex justify-content-center align-items-center py-6">
-              <img src="https://www.fillmurray.com/200/200"/>
+              <img src="https://www.fillmurray.com/200/200" />
             </div>
             <div className="who-are-you__text col-6 flex flex-column justify-content-center align-items-center p-5">
               <p>
@@ -53,31 +53,34 @@ export default class RegistrationHome extends React.Component {
             </div>
           </div>
           <div className="row">
-            {this.state.showButtons&&(
-              <FormButtons buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm}/>
+            {this.state.showButtons && (
+              <FormButtons buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm} />
             )}
-            {this.state.renderRegistrationForm&&(
+            {this.state.renderRegistrationForm && (
               <InputForm className="col-6" />
             )}
             {/*<div className="col-6">Find ballot form here</div>
             <div className="col-6">Check Registration form here<button /></div>*/}
           </div>
         </div>
-        <div className="ballot">
-          <div className="ballot__into-test row">
-            <div className="col">Into text</div>
-            {this.state.renderBallot&&(
-              <Ballot precintID={this.state.precintID}/>
-            )}
-          </div>
-          <div className="row">
-            <div className="col-3"><JumpLinks ballot={this.ballotItems}/></div>
-            <div className="col-9">
-              {this.ballotItems.map(ballotItem => (<div id={`#ballot-item-${ballotItem.id}`}><BackToTop/></div>))}
+        {this.state.renderBallot && (
+          <div className="ballot">
+            <div className="ballot__into-test row">
+              <div className="col">Into text</div>
+
+              <Ballot precintID={this.state.precintID} />
+
+            </div>
+            <div className="row">
+              <div className="col-3"><JumpLinks ballot={this.ballotItems} /></div>
+              <div className="col-9">
+                {this.ballotItems.map(ballotItem => (<div id={`#ballot-item-${ballotItem.id}`}><BackToTop /></div>))}
+              </div>
             </div>
           </div>
-        </div>
-        <Footer/>
+        )}
+
+        <Footer />
       </div>
     );
   }

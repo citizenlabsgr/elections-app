@@ -18,6 +18,7 @@ export default class InputForm extends React.Component {
             var registeredText = "not Registered";
             if (data["registered"]) {
                 registeredText = "registered";
+                //get precint id to send to ballot component
             }
             alert("You are " + registeredText);
         }).catch(function () {
