@@ -16,7 +16,6 @@ export default class RegistrationHome extends React.Component {
       renderRegistrationForm: false,
       renderBallot:false,
     };
-    this.introText='Do you know if you are registered?';
     this.buttonOptions=['Yes, show me my ballot','No, find my registration status' ];
     this.ballotItems = [
       {id: 'some-uuid-1', name: 'Ballot Item One'},
@@ -53,7 +52,7 @@ export default class RegistrationHome extends React.Component {
           </div>
           <div className="row">
             {this.state.showButtons&&(
-              <FormButtons className="col-6" buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm}/>
+              <FormButtons buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm}/>
             )}
             {this.state.renderRegistrationForm&&(
               <InputForm className="col-6" />
