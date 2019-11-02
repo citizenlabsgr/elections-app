@@ -4,7 +4,7 @@
   "description": "Canonical web client for the Michigan Elections API.",
   "repository": "https://github.com/citizenlabsgr/elections-app",
   "engines": {
-    "node": ">=10.14"
+    "node": "10.14"
   },
   "main": "index.js",
   "watch": {
