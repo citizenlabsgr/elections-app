@@ -15,12 +15,7 @@ export default class InputForm extends React.Component {
     fetchRegistrationInfo(event) {
         event.preventDefault();
         fetch('https://michiganelections.io/api/registrations?first_name=' + this.state.firstName + '&last_name=' + this.state.lastName + '&birth_date=' + this.state.birthDate + '&zip_code=' + this.state.zipCode).then(response => response.json()).then(data => {
-            var registeredText = "not Registered";
-            if (data["registered"]) {
-                registeredText = "registered";
-                //get precint id to send to ballot component
-            }
-            alert("You are " + registeredText);
+            this.props.setRegistrantInfo(data);    
         }).catch(function () {
 
         });

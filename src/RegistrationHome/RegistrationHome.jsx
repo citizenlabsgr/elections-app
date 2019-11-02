@@ -17,6 +17,7 @@ export default class RegistrationHome extends React.Component {
       renderRegistrationForm: false,
       renderBallot: false,
       precintID: '',
+      registrationInfo:[]
     };
     this.buttonOptions = ['Yes, show me my ballot', 'No, find my registration status'];
     this.ballotItems = [
@@ -24,14 +25,19 @@ export default class RegistrationHome extends React.Component {
       { id: 'some-uuid-2', name: 'Ballot Item Two' }
     ];
     this.RenderRegistrationForm = this.RenderRegistrationForm.bind(this);
-    this.renderVoterBallot = this.renderVoterBallot.bind(this);
+    this.RenderVoterBallot = this.RenderVoterBallot.bind(this);
+    this.SetUserInfo = this.SetUserInfo.bind(this);
   }
 
   RenderRegistrationForm() {
     this.setState({ renderRegistrationForm: true });
   }
-  renderVoterBallot() {
+  RenderVoterBallot() {
     this.setState({ renderBallot: true });
+  }
+  SetUserInfo(userData){
+    debugger;
+    this.setState({registrationInfo:userData})
   }
 
   render() {
@@ -57,7 +63,7 @@ export default class RegistrationHome extends React.Component {
               <FormButtons buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm} />
             )}
             {this.state.renderRegistrationForm && (
-              <InputForm className="col-6" />
+              <InputForm className="col-6" setRegistrantInfo={this.SetUserInfo} />
             )}
             {/*<div className="col-6">Find ballot form here</div>
             <div className="col-6">Check Registration form here<button /></div>*/}
@@ -68,7 +74,7 @@ export default class RegistrationHome extends React.Component {
             <div className="ballot__into-test row">
               <div className="col">Into text</div>
 
-              <Ballot precintID={this.state.precintID} />
+              <Ballot precintID={this.state.registrationInfo["precint"].id} />
 
             </div>
             <div className="row">
