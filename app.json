@@ -1,16 +1,13 @@
 {
-  "addons": [
-
-  ],
+  "addons": [],
   "buildpacks": [
-
+    {
+      "url": "heroku/python"
+    }
   ],
-  "env": {
-  },
-  "formation": {
-  },
+  "env": {},
+  "formation": {},
   "name": "elections-app",
-  "scripts": {
-  },
+  "scripts": {},
   "stack": "heroku-18"
 }
