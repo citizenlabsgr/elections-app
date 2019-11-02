@@ -1,6 +1,7 @@
 import React from 'react';
 import InputForm from './VoterInfo/InputForm.jsx';
 import BackToTop from '../components/back-to-top/back-to-top.component.jsx';
+import Footer from '../components/footer/footer.component.jsx';
 import JumpLinks from '../components/jump-links/jump-links.component.jsx';
 import FormButtons from '../RegistrationHome/content/FormButtons.jsx';
 
@@ -37,7 +38,18 @@ export default class RegistrationHome extends React.Component {
       <div className="container-fluid">
         <div className="who-are-you">
           <div className="who-are-you__into-text row">
-            <div className="col">{this.introText}</div>
+            <div className="who-are-you__image col-6 flex justify-content-center align-items-center py-6">
+              <img src="https://www.fillmurray.com/200/200"/>
+            </div>
+            <div className="who-are-you__text col-6 flex flex-column justify-content-center align-items-center p-5">
+              <p>
+                We get it, elections and ballots can be overwhelming. And you probably have a lot of questions, am I
+                right? How do I know if I’m registered? How can I register? How do I find out where I need to go?
+              </p>
+              <p>
+                Don’t worry - we have you covered. Simply follow the steps and you’ll be informed and ready to vote!
+              </p>
+            </div>
           </div>
           <div className="row">
             {this.state.showButtons&&(
@@ -64,6 +76,7 @@ export default class RegistrationHome extends React.Component {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }

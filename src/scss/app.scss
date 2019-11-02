@@ -2,6 +2,13 @@
 @import '../../node_modules/bootstrap/scss/functions';
 @import './bootstrap/variables';
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
+
+// Layout
+@import '../RegistrationHome/registration-home.component';
 // Components
 @import '../components/back-to-top/back-to-top.component';
 @import "../components/jump-links/jump-links.component";
+
+.flex {
+  display: flex;
+}
