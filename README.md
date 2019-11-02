@@ -2,6 +2,8 @@
 
 Elections-app is a React Single Page App (SPA)
 
+[![Build Status](https://travis-ci.org/citizenlabsgr/elections-app.svg?branch=master)](https://travis-ci.org/citizenlabsgr/elections-app)
+
 ## Goals
 1. Determine if an end user is Registered to Vote
 1. If Registered show what a Ballot will contain
