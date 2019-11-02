@@ -1,7 +1,11 @@
 {
   "name": "voter-registration",
   "version": "1.0.0",
-  "description": "",
+  "description": "Canonical web client for the Michigan Elections API.",
+  "repository": "https://github.com/citizenlabsgr/elections-app",
+  "engines": {
+    "node": "10.14"
+  },
   "main": "index.js",
   "watch": {
     "build": {
@@ -14,9 +18,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.dev.js",
     "watch": "npm-watch build",
-    "build-prod": "webpack -p --config webpack.prod.js"
+    "build-dev": "webpack --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",

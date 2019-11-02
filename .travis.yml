@@ -8,7 +8,7 @@ install:
 
 script:
   - npm run test || echo "TODO - add tests"
-  - npm run build-prod
+  - npm run build
 
 deploy:
   provider: pages
