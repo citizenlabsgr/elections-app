@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - 10
+
+install:
+  - npm install
+
+script:
+  - npm run test || echo "TODO - add tests"
+  - npm run build-prod
+
+deploy:
+  provider: pages
+  local_dir: dist
+  fqdn: explore.michiganelections.io
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
