@@ -1,7 +1,11 @@
 {
   "name": "voter-registration",
   "version": "1.0.0",
-  "description": "",
+  "description": "Canonical web client for the Michigan Elections API.",
+  "repository": "https://github.com/citizenlabsgr/elections-app",
+  "engines": {
+    "node": ">=10.14"
+  },
   "main": "index.js",
   "watch": {
     "build": {
