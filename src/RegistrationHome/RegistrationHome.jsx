@@ -6,8 +6,6 @@ import JumpLinks from '../components/jump-links/jump-links.component.jsx';
 import FormButtons from '../RegistrationHome/content/FormButtons.jsx';
 import Ballot from './VoterInfo/Ballot.jsx';
 
-
-
 export default class RegistrationHome extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,7 @@ export default class RegistrationHome extends React.Component {
       showButtons: true,
       renderRegistrationForm: false,
       renderBallot: false,
-      precintID: '',
+      showRegistrationStatus:false,
       registrationInfo:[]
     };
     this.buttonOptions = ['Yes, show me my ballot', 'No, find my registration status'];
@@ -29,15 +27,17 @@ export default class RegistrationHome extends React.Component {
     this.SetUserInfo = this.SetUserInfo.bind(this);
   }
 
-  RenderRegistrationForm() {
-    this.setState({ renderRegistrationForm: true });
+  RenderRegistrationForm(event) {
+    debugger;
+    this.setState({ renderRegistrationForm: true, });
   }
   RenderVoterBallot() {
     this.setState({ renderBallot: true });
   }
   SetUserInfo(userData){
-    debugger;
-    this.setState({registrationInfo:userData})
+    //render ballot depending on if they clicked yes or no
+
+    this.setState({registrationInfo:userData,})
   }
 
   render() {
@@ -64,9 +64,13 @@ export default class RegistrationHome extends React.Component {
             )}
             {this.state.renderRegistrationForm && (
               <InputForm className="col-6" setRegistrantInfo={this.SetUserInfo} />
+              
             )}
+
             {/*<div className="col-6">Find ballot form here</div>
             <div className="col-6">Check Registration form here<button /></div>*/}
+          </div>
+          <div>
           </div>
         </div>
         {this.state.renderBallot && (
