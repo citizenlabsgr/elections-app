@@ -1,1 +1,1 @@
-web: sappy
+web: sappy dist --port=${PORT}
