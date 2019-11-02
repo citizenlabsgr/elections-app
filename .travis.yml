@@ -8,3 +8,13 @@ install:
 
 script:
   - npm run test
+  - npm run build-prod
+
+deploy:
+  provider: pages
+  local_dir: dist
+  fqdn: explore.michiganelections.io
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
