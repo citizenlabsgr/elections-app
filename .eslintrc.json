@@ -1,0 +1,57 @@
+{
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "settings": {
+      "react": {
+        "version": "16.7.0"
+      }
+    },
+    "rules": {
+      "indent": [
+        "warn",
+        2
+      ],
+      "no-mixed-spaces-and-tabs": [
+        "warn"
+      ],
+      "no-trailing-spaces": [
+        "warn"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "always"
+      ],
+      "no-console": [
+        "off"
+      ],
+      "react/prop-types": "off",
+      "react/jsx-indent": ["warn", 2],
+      "react/jsx-indent-props": ["warn", 2],
+      "react/jsx-closing-bracket-location": ["warn", "line-aligned"]
+    }
+  }
