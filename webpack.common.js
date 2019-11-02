@@ -1,7 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
- const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js'
@@ -10,31 +9,40 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'voterRegistration',
-      template: __dirname + "/src/index.html",
-      filename: "index.html",
-      inject:"body"
+      template: __dirname + '/src/index.html',
+      filename: 'index.html',
+      inject: 'body'
     })
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
-  
   module: {
-         rules: [
+    rules: [
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
           {
-            test: /.jsx?$/,
-            exclude: /node_modules/,
-            loader: "babel-loader",
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
           },
           {
-             test: /\.css$/,
-             use: [
-               'style-loader',
-               'css-loader',
-               'sass-loader',
-             ],
-           },
-         ],
-       },
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
