@@ -15,8 +15,7 @@ export default class FormButtons extends React.Component {
     }
     render(){
         return (
-           <div>  {this.buttonArrayRender()     
-        }</div>
+           <div>  {this.buttonArrayRender()}</div>
            
         )
     }

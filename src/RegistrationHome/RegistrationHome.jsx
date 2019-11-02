@@ -11,10 +11,12 @@ export default class RegistrationHome extends React.Component {
     super(props);
 
     this.state = {
+      showButtons:true,
       renderRegistrationForm: false,
       renderBallot:false,
     };
-    this.buttonOptions=['Yes, show me my ballot','No, find registration status' ];
+    this.introText='Do you know if you are registered?';
+    this.buttonOptions=['Yes, show me my ballot','No, find my registration status' ];
     this.ballotItems = [
       {id: 'some-uuid-1', name: 'Ballot Item One'},
       {id: 'some-uuid-2', name: 'Ballot Item Two'}
@@ -24,7 +26,7 @@ export default class RegistrationHome extends React.Component {
   }
 
   RenderRegistrationForm() {
-    this.setState({ renderRegistrationForm: true });
+    this.setState({ renderRegistrationForm: true,showButtons:true });
   }
   renderVoterBallot(){
     this.setState({renderBallot:true});
@@ -35,10 +37,15 @@ export default class RegistrationHome extends React.Component {
       <div className="container-fluid">
         <div className="who-are-you">
           <div className="who-are-you__into-text row">
-            <div className="col">Into text</div>
+            <div className="col">{this.introText}</div>
           </div>
           <div className="row">
-            <FormButtons className="col-6" buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm}/>
+            {this.state.showButtons&&(
+              <FormButtons className="col-6" buttonText={this.buttonOptions} showAction={this.RenderRegistrationForm}/>
+            )}
+            {this.state.renderRegistrationForm&&(
+              <InputForm className="col-6" />
+            )}
             {/*<div className="col-6">Find ballot form here</div>
             <div className="col-6">Check Registration form here<button /></div>*/}
           </div>
@@ -46,6 +53,9 @@ export default class RegistrationHome extends React.Component {
         <div className="ballot">
           <div className="ballot__into-test row">
             <div className="col">Into text</div>
+            {/*this.state.renderBallot&&(
+              renderBallot things
+            )*/}
           </div>
           <div className="row">
             <div className="col-3"><JumpLinks ballot={this.ballotItems}/></div>
