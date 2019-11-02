@@ -3,6 +3,7 @@ import InputForm from './VoterInfo/InputForm.jsx';
 import BackToTop from '../components/back-to-top/back-to-top.component.jsx';
 import JumpLinks from '../components/jump-links/jump-links.component.jsx';
 import FormButtons from '../RegistrationHome/content/FormButtons.jsx';
+import Ballot from './VoterInfo/Ballot.jsx';
 
 
 
@@ -14,6 +15,7 @@ export default class RegistrationHome extends React.Component {
       showButtons:true,
       renderRegistrationForm: false,
       renderBallot:false,
+      precintID:'',
     };
     this.introText='Do you know if you are registered?';
     this.buttonOptions=['Yes, show me my ballot','No, find my registration status' ];
@@ -26,7 +28,7 @@ export default class RegistrationHome extends React.Component {
   }
 
   RenderRegistrationForm() {
-    this.setState({ renderRegistrationForm: true,showButtons:true });
+    this.setState({ renderRegistrationForm: true });
   }
   renderVoterBallot(){
     this.setState({renderBallot:true});
@@ -53,9 +55,9 @@ export default class RegistrationHome extends React.Component {
         <div className="ballot">
           <div className="ballot__into-test row">
             <div className="col">Into text</div>
-            {/*this.state.renderBallot&&(
-              renderBallot things
-            )*/}
+            {this.state.renderBallot&&(
+              <Ballot precintID={this.state.precintID}/>
+            )}
           </div>
           <div className="row">
             <div className="col-3"><JumpLinks ballot={this.ballotItems}/></div>
