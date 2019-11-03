@@ -24,10 +24,9 @@
   "scripts": {
     "test": "node -r @babel/register -r @babel/polyfill ./src/**/**/*.spec.jsx",
     "watch-test": "npm-watch test",
-    "build": "webpack --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js",
     "watch": "npm-watch build",
-    "build-dev": "webpack --config webpack.dev.js",
-    "build": "webpack -p --config webpack.prod.js"
+    "build-dev": "webpack --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
