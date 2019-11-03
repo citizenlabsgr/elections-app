@@ -7,13 +7,13 @@ Elections-app is a React Single Page App (SPA)
 ## Goals
 1. Determine if an end user is Registered to Vote
 1. If Registered, show what a Ballot will contain
-1. if not Registered, link to the Michigan Voter Registration Information
+1. If not Registered, link to the Michigan Voter Registration Information
 
 ## Decisions
-1. [React](https://reactjs.org/) to Manage Javascript and HTML Componets
+1. [React](https://reactjs.org/) to Manage Javascript and HTML Components
 1. [SCSS](https://sass-lang.com/) to give CSS a boost
-1. [BEM](http://getbem.com/) to help organize the css
-1. [Riteway](https://github.com/ericelliott/riteway) for testing
+1. [BEM](http://getbem.com/) to help organize the CSS
+1. [Riteway](https://github.com/ericelliott/riteway) for Testing
 
 ### Prerequisites
 
@@ -36,6 +36,11 @@ $ npm run watch # This will do build every time you make a change
 $ npm run build-dev # This will build a non-minified version of the project
 $ npm run build # This will build a minified version of the project
 ```
+
+### View Local
+After running one of the builds you will have a dist folder.
+1. Navigate to that folder
+2. Open index.html with your web browser
 
 ### Run Tests
 ```shell script
