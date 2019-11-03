@@ -1,6 +1,7 @@
 import React from 'react';
 import BackToTop from '../components/back-to-top/back-to-top.component.jsx';
 import Footer from '../components/footer/footer.component.jsx';
+import ForkOnGithub from '../components/fork-on-github/fork-on-github.component.jsx';
 import JumpLinks from '../components/jump-links/jump-links.component.jsx';
 import FormButtons from '../RegistrationHome/content/FormButtons.jsx';
 import RegistrationStatus from './content/RegistrationStatus.jsx';
@@ -61,11 +62,12 @@ export default class RegistrationHome extends React.Component {
   render() {
     return (
       <div>
+        <ForkOnGithub/>
         <div className="container-fluid bg-ivory">
           <div className="who-are-you">
             <div className="who-are-you__into-text row">
               <div className="who-are-you__image col-6 flex justify-content-center align-items-center py-6">
-                <img src="https://www.fillmurray.com/200/200"/>
+                <img src="https://www.fillmurray.com/200/200" alt=""/>
               </div>
               <div className="who-are-you__text col-6 flex flex-column justify-content-center align-items-center p-5">
                 <p>

@@ -10,7 +10,7 @@ export default class JumpLinks extends React.Component {
    */
   render() {
     const ballotItems = this.props.ballot.map((ballotItem, i) => (
-      <li className="jump-links__list-item col">
+      <li key={'jump-link' + i} className="jump-links__list-item col">
         <a className="jump-links__anchor" href={`#ballot-item-${ballotItem.id}`} role="menuitem" tabIndex={i}>{ballotItem.name}</a>
       </li>));
     return (

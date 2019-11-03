@@ -10,12 +10,13 @@ export default class FormButtons extends React.Component {
     const clickAction = this.props.showAction;
     const buttonOptions = this.props.buttonText;
     return buttonOptions.map((buttonOption, index) => {
-      let classStr  = "form-button col-5 flex justify-content-center";
-      classStr =  index === 0 ? classStr + ' offset-1' : classStr
+      let classStr = 'form-button col-5 flex justify-content-center';
+      classStr = index === 0 ? classStr + ' offset-1' : classStr;
       return (
-        <div className={classStr}>
-          <button type="button" className="form-button__button btn bg-citizen_labs_orange txt-white montserrat" key={index + buttonOption}
-                  onClick={clickAction}><h3>{buttonOption}</h3></button>
+        <div className={classStr} key={index + buttonOption + 'parent'}>
+          <button type="button" className="form-button__button btn bg-citizen_labs_orange txt-white montserrat"
+                  key={index + buttonOption}
+                  onClick={clickAction}><h3 key={index + buttonOption + 'H3'}>{buttonOption}</h3></button>
         </div>);
     });
   }
