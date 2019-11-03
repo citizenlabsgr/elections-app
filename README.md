@@ -27,7 +27,7 @@ $ npm install
 
 ### For Development
 ```shell script
-$ npm watch # This will do build every time you make a change
+$ npm run watch # This will do build every time you make a change
 ```
 
 ### Build Project
