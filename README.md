@@ -6,8 +6,8 @@ Elections-app is a React Single Page App (SPA)
 
 ## Goals
 1. Determine if an end user is Registered to Vote
-1. If Registered show what a Ballot will contain
-1. if not Registered Link to the Michigan Voter Registration Information
+1. If Registered, show what a Ballot will contain
+1. if not Registered, link to the Michigan Voter Registration Information
 
 ## Decisions
 1. [React](https://reactjs.org/) to Manage Javascript and HTML Componets
