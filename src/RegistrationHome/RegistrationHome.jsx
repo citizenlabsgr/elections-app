@@ -79,7 +79,7 @@ export default class RegistrationHome extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container-fluid bg-charcoal_gray">
+        <div id="sample-ballot" className="container-fluid bg-charcoal_gray">
           <div className="make-a-choice">
             <div className="make-a-choice__header row justify-content-center txt-white">
               <h2 className="col-4">

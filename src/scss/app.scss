@@ -26,3 +26,15 @@ body {
 .flex {
   display: flex;
 }
+
+.main-nav {
+  padding: 1rem;
+
+  &__button {
+    a {
+      border-radius: 0;
+      min-height: calc(5rem + 2px);
+      padding: 1rem;
+    }
+  }
+}
