@@ -6,6 +6,7 @@ import FormButtons from '../RegistrationHome/content/FormButtons.jsx';
 import RegistrationStatus from './content/RegistrationStatus.jsx';
 import Ballot from './VoterInfo/Ballot.jsx';
 import InputForm from './VoterInfo/InputForm.jsx';
+import Positions from './content/Positions.jsx';
 
 export default class RegistrationHome extends React.Component {
   constructor(props) {
@@ -16,9 +17,14 @@ export default class RegistrationHome extends React.Component {
       renderBallot: false,
       showRegistrationStatus: false,
       renderStatus: false,
-      userInfo: []
+      userInfo: [],
+      ballotPositions : [],
     };
     this.buttonOptions = ['YES', 'NO'];
+    /*
+    this.ballotPositions = [
+      {  id:'', name:'', seats:'', candidates:[{name:"",party:{id:'',name:''}}]},
+    ]*/
     this.ballotItems = [
       {id: 'some-uuid-1', name: 'Ballot Item One'},
       {id: 'some-uuid-2', name: 'Ballot Item Two'}
@@ -26,13 +32,12 @@ export default class RegistrationHome extends React.Component {
     this.RenderRegistrationForm = this.RenderRegistrationForm.bind(this);
     this.RenderVoterBallot = this.RenderVoterBallot.bind(this);
     this.SetUserInfo = this.SetUserInfo.bind(this);
+    this.SetPositions = this.SetPositions.bind(this);
   }
 
   RenderRegistrationForm(event) {
     var showStatus = this.state.showRegistrationStatus;
-    if(event.target.innerText === 'No, find my registration status') {
-      showStatus = true;
-    }
+    showStatus = (event.target.innerText==='NO')?true:false;
     this.setState({renderRegistrationForm: true, showRegistrationStatus: showStatus});
   }
 
@@ -48,6 +53,9 @@ export default class RegistrationHome extends React.Component {
       renderBallot: userData['registered'],
       renderStatus: this.state.showRegistrationStatus
     });
+  }
+  SetPositions(positionData){
+    this.setState({ballotPositions:positionData});
   }
 
   render() {
@@ -88,18 +96,22 @@ export default class RegistrationHome extends React.Component {
               {/*<div className="col-6">Find ballot form here</div>
                <div className="col-6">Check Registration form here<button /></div>*/}
             </div>
-          </div>
-          {this.state.renderStatus && (
+            {this.state.renderStatus && (
             <RegistrationStatus status={this.state.userInfo['registered']}/>
           )}
+          </div>
         </div>
         {this.state.renderBallot && (
           <div className="ballot">
             <div className="ballot__into-test row">
               <div className="col">Into text</div>
-
-              <Ballot precintID={this.state.userInfo['precinct'].id}/>
-
+              <Ballot precintID={this.state.userInfo['precinct'].id} assignBallotPositions={this.SetPositions}/>
+            </div>
+            <div className="row">
+              <div className="col-3"></div>
+              <div className="col-9">
+              <Positions positions={this.state.ballotPositions}/>
+              </div>
             </div>
             <div className="row">
               <div className="col-3"><JumpLinks ballot={this.ballotItems}/></div>

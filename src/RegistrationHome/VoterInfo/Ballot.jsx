@@ -23,7 +23,10 @@ export default class Ballot extends React.Component {
         //give me positions on next upcoming ballot
         fetch('https://michiganelections.io/api/positions/?precinct_id=' + precintID).then(response => response.json()).then(data => {
             //do something with info that gets returned
-            this.setState({impendingPositions:data,ballotFetched:true});
+            this.props.assignBallotPositions(data.results);
+            console.log(data.results);
+            this.setState({impendingPositions:data.results,ballotFetched:true});
+          
         }).catch(function () {
 
         });
@@ -41,8 +44,10 @@ export default class Ballot extends React.Component {
             <div>
                 {this.state.ballotFetched && (
                     <div>This is your ballot information
+                        {/*
                         <Positions data={this.state.impendingPositions} />
                         <Proposals data={this.state.upcomingProposals} />
+                        */ }
                     </div>
                 )}
             </div>
