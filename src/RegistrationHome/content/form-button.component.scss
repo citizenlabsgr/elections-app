@@ -1,0 +1,15 @@
+.form-button {
+  .btn {
+    border-radius: 0;
+  }
+
+  &__button {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: $grid-gutter-width * 2;
+    > * {
+      margin: 0 $grid-gutter-width * 2;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@each $key, $val in $app_colors_map {
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  .txt-#{$key} {
+    color: $val;
+  }
+}

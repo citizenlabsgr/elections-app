@@ -1,14 +1,21 @@
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot";
 @import '../../node_modules/bootstrap/scss/functions';
 @import './bootstrap/variables';
+@import "./variables-override";
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/button-group';
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
+
+// Utility
+@import "./colors";
 
 // Layout
 @import '../RegistrationHome/registration-home.component';
 // Components
+@import "../RegistrationHome/content/form-button.component";
 @import '../components/back-to-top/back-to-top.component';
 @import "../components/jump-links/jump-links.component";
-
+@import "../components/footer/footer.component";
 .flex {
   display: flex;
 }

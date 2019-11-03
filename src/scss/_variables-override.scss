@@ -1,0 +1,23 @@
+$citizen_labs_orange: #f16522;
+$charcoal_gray: #4b4a50;
+$ivory: #fdf6ea;
+$gold: #e5cb5d;
+$teal: #23bdbd;
+$white: #fff;
+
+$app_color: $citizen_labs_orange !default;
+$app_colors_map: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$app_colors_map: map-merge(
+                (
+                        citizen_labs_orange: $citizen_labs_orange,
+                        charcoal_gray: $charcoal_gray,
+                        ivory: $ivory,
+                        gold: $gold,
+                        teal: $teal,
+                        white: $white,
+                        black: $black
+                ),
+                $app_colors_map
+);
+
