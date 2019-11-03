@@ -13,7 +13,7 @@ export default class Positions extends React.Component {
                     {
                         position.candidates.map((candidate)=> {
                             return (
-                                <div key={candidate.id}> {candidate.name} {candidate["party"].name}</div>
+                                <li key={candidate.id}> {candidate.name} - {candidate["party"].name}</li>
                             )
                         })
                     }
