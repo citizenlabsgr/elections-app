@@ -9,11 +9,11 @@ export default class Positions extends React.Component {
     formatPositionData() {
         var positions = this.props.positions.map((position, index) => {
             return (
-                <div keyseed={index}>{position.name}
+                <div key={index}>{position.name}
                     {
                         position.candidates.map((candidate)=> {
                             return (
-                                <div keyseed={candidate.id}> {candidate.name} {candidate["party"].name}</div>
+                                <div key={candidate.id}> {candidate.name} {candidate["party"].name}</div>
                             )
                         })
                     }
