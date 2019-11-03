@@ -5,10 +5,8 @@
 @import '../../node_modules/bootstrap/scss/buttons';
 @import '../../node_modules/bootstrap/scss/button-group';
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
-
 // Utility
 @import "./colors";
-
 // Layout
 @import '../RegistrationHome/registration-home.component';
 // Components
@@ -16,6 +14,15 @@
 @import '../components/back-to-top/back-to-top.component';
 @import "../components/jump-links/jump-links.component";
 @import "../components/footer/footer.component";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .flex {
   display: flex;
 }

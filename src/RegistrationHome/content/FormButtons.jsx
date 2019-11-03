@@ -14,7 +14,7 @@ export default class FormButtons extends React.Component {
       classStr =  index === 0 ? classStr + ' offset-1' : classStr
       return (
         <div className={classStr}>
-          <button type="button" className="form-button__button btn bg-citizen_labs_orange txt-white" key={index + buttonOption}
+          <button type="button" className="form-button__button btn bg-citizen_labs_orange txt-white montserrat" key={index + buttonOption}
                   onClick={clickAction}><h3>{buttonOption}</h3></button>
         </div>);
     });
