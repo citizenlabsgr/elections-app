@@ -7,16 +7,18 @@ export default class Positions extends React.Component {
         this.formatPositionData = this.formatPositionData.bind(this);
     }
     formatPositionData() {
-        let positions = [];
-        this.props.positions.map(function (position, index) {
-
-            positions.push(`<div keyseed=${index}>${position.name}`);
-
-            position.candidates.forEach(function (candidate) {
-                positions.push(`<div keyseed=${candidate.id}>${candidate.name} ${candidate["party"].name}</div>`);
-            });
-            positions.push(`</div>`);
-
+        var positions = this.props.positions.map((position, index) => {
+            return (
+                <div keyseed={index}>{position.name}
+                    {
+                        position.candidates.map((candidate)=> {
+                            return (
+                                <div keyseed={candidate.id}> {candidate.name} {candidate["party"].name}</div>
+                            )
+                        })
+                    }
+            </div>
+            )
         });
         return positions;
     }
