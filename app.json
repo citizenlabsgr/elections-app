@@ -12,5 +12,5 @@
   "formation": {},
   "name": "elections-app",
   "scripts": {},
-  "stack": "heroku-18"
+  "stack": "heroku-22"
 }
